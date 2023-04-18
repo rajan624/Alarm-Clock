@@ -3,9 +3,46 @@ sound.loop = true;
 
 var h3 = document.getElementById("current-time");
 
+
+var currentTime = setInterval(function () {
+  h3.textContent = getCurrentTime();
+}, 1000);
+
+function hoursMenu() {
+  var select = document.getElementById("alarm-hour-time");
+  var hrs = 12;
+
+  for (i = 1; i <= hrs; i++) {
+    select.options[select.options.length] = new Option(i < 10 ? "0" + i : i, i);
+  }
+}
+hoursMenu();
+
+function minMenu() {
+  var select = document.getElementById("alarm-minute-time");
+  var min = 59;
+
+  for (i = 0; i <= min; i++) {
+    select.options[select.options.length] = new Option(i < 10 ? "0" + i : i, i);
+  }
+}
+minMenu();
+
+function secMenu() {
+  var select = document.getElementById("alarm-second-time");
+  var sec = 59;
+
+  for (i = 0; i <= sec; i++) {
+    select.options[select.options.length] = new Option(i < 10 ? "0" + i : i, i);
+  }
+}
+secMenu();
+
 function addZero(time) {
   return time < 10 ? "0" + time : time;
 }
+
+
 // function to get current time
 function getCurrentTime() {
    var date = new Date();
@@ -98,41 +135,4 @@ function removeAlarmFunction() {
   document.getElementById("alarm-am-pm-time").disabled = false;
   sound.pause();
 }
-
-
-// display current time by the second
-var currentTime = setInterval(function () {
- 
-  h3.textContent = getCurrentTime();
-}, 1000);
-
-function hoursMenu() {
-  var select = document.getElementById("alarm-hour-time");
-  var hrs = 12;
-
-  for (i = 1; i <= hrs; i++) {
-    select.options[select.options.length] = new Option(i < 10 ? "0" + i : i, i);
-  }
-}
-hoursMenu();
-
-function minMenu() {
-  var select = document.getElementById("alarm-minute-time");
-  var min = 59;
-
-  for (i = 0; i <= min; i++) {
-    select.options[select.options.length] = new Option(i < 10 ? "0" + i : i, i);
-  }
-}
-minMenu();
-
-function secMenu() {
-  var select = document.getElementById("alarm-second-time");
-  var sec = 59;
-
-  for (i = 0; i <= sec; i++) {
-    select.options[select.options.length] = new Option(i < 10 ? "0" + i : i, i);
-  }
-}
-secMenu();
 
