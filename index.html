@@ -1,0 +1,56 @@
+<html lang="en">
+  <head>
+    <title>Alarm Clock</title>
+    <meta
+      charset="UFT-8"
+      name="viewport"
+      content="width=device-width, initial=scale=1.0"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    
+  </head>
+  <body>
+    <div id="main-container">
+      <h3 id="current-time"></h3>
+    </div>
+
+    <div id="alarm-time">
+      <h3>Set Alarm Time</h3>
+      <label>
+        <div>
+          <select id="alarm-hour-time"></select>
+        </div>
+      </label>
+      <label>
+        <div>
+          <select id="alarm-minute-time"></select>
+        </div>
+      </label>
+      <label>
+        <div>
+          <select id="alarm-second-time"></select>
+        </div>
+      </label>
+      <label>
+        <div>
+          <select id="alarm-am-pm-time">
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+          </select>
+        </div>
+      </label>
+    </div>
+    <div id="buttonHolder">
+      <div>
+        <button id="setAlarm" onClick="setAlarmFunction()">Set Alarm</button>
+      </div>
+
+      <div>
+        <button id="removeAlarm" onClick="removeAlarmFunction()">
+          Clear Alarm
+        </button>
+      </div>
+    </div>
+	<script type="text/javascript" src="main.js"></script>
+  </body>
+</html>
